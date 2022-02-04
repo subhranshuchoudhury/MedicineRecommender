@@ -1,4 +1,4 @@
-# Medicine Recommending
+# Medicine Recommend System
 ___________________________
 
 - Html basic project. A medicine recommending system.
