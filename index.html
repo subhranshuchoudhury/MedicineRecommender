@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Medicine Recommender !</title>
+	<style>
+	table,
+	th,
+	td {
+		border: 1px solid #101820FF;
+		padding: 2px;
+		background-color: #101820FF;
+		border-radius: 80px;
+	}
+	
+	th,
+	td {
+		padding: 8px;
+		color: #101820FF;
+		background-color: #08A923;
+		text-align: center;
+	}
+	
+	th {
+		background-color: #FF5733;
+	}
+	</style>
+	<style type="text/css">
+	html,
+	body {
+		height: 100%;
+	}
+	
+	body {
+		background-color: #131F4F;
+	}
+	</style>
+</head>
+
+<body>
+	<p align="center"> <img src="https://www.dropbox.com/s/ldevryf2zsasjew/main_logo.png?dl=1" style="height: 70px"> </p>
+	<h2 style="text-align: center;color: white">&#128137; FIND YOUR MEDICINE &#128137;</h2>
+	<p align="center">
+		<input style="border: 3px;width: 50%;height: 30px;text-align: center;border-radius: 30px" type="text" name="" id="user_search_input" placeholder="Search Disease Here...&#128269;" onkeyup="search_the_word()"> </p>
+	<table id="data_of_table" align="center" style="width: 70%">
+		<tr>
+			<th style="width: 40%;">DISEASE LIST</th>
+			<th style="width: 30%;">MEDICINE LIST</th>
+			<th style="width: 30%;">SYMPTOMS LIST</th>
+		</tr>
+		<tr>
+			<td>Fever</td>
+			<td>Paracetamol,Aspirin</td>
+			<td>Headache,High body temperature</td>
+		</tr>
+		<tr>
+			<td>Cough</td>
+			<td>Cough Syrup eg:cofsils</td>
+			<td>Coughing</td>
+		</tr>
+		<tr>
+			<td>Gastritis</td>
+			<td>DSR, Polycrol</td>
+			<td>Pain in stomach</td>
+		</tr>
+		<tr>
+			<td>More to come..</td>
+			<td>..</td>
+			<td>..</td>
+		</tr>
+	</table>
+	<p align="center"> Made by Subhranshu Choudhury
+		<br> Warning: Consult a doctor before use any medicine.
+		<br> <a href="https://subhranshuchoudhury.w3spaces.com/">About Me</a> </p>
+	<script>
+	const search_the_word = () => {
+		let filter = document.getElementById('user_search_input').value.toUpperCase();
+		let data_of_table = document.getElementById('data_of_table');
+		let tr = data_of_table.getElementsByTagName('tr');
+		for(var i = 0; i < tr.length; i++) {
+			let td = tr[i].getElementsByTagName('td')[0];
+			if(td) {
+				let textvalue = td.textContent || td.innerHTML;
+				if(textvalue.toUpperCase().indexOf(filter) > -1) {
+					tr[i].style.display = "";
+				} else {
+					tr[i].style.display = "NONE";
+				}
+			}
+		}
+	}
+	</script>
+</body>
+
+</html>
