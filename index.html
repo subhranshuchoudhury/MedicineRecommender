@@ -44,7 +44,14 @@
 	<p align="center"> <img src="https://www.dropbox.com/s/wm2nhh1624j5q3p/main_logo-min.png?dl=1" style="height: 70px"> </p>
 	<h2 style="text-align: center;color: white">&#128137; FIND YOUR MEDICINE &#128137;</h2>
 	<p align="center">
-		<input style="border: 3px;width: 50%;height: 30px;text-align: center;border-radius: 30px" type="text" name="" id="user_search_input" placeholder="Search Disease Here...&#128269;" onkeyup="search_the_word()"> </p>
+	  <input style="border: 3px;width: 30%;height: 30px;text-align: center;border-radius: 30px" type="text" name="" id="user_search_input" placeholder="Search Disease &#128269;" onkeyup="search_the_word()">
+	  <input style="border: 3px;width: 30%;height: 30px;text-align: center;border-radius: 30px" type="text" name="" id="user_med_input" placeholder="Search Medicine &#128269;" onkeyup="search_the_word_two()">
+	  <input style="border: 3px;width: 30%;height: 30px;text-align: center;border-radius: 30px" type="text" name="" id="user_symp_input" placeholder="Search Symptoms &#128269;" onkeyup="search_the_word_three()">
+	</p>
+	
+	
+		
+		
 	<table id="data_of_table" align="center" style="width: 70%">
 		<tr>
 			<th style="width: 40%;">DISEASE LIST</th>
@@ -93,6 +100,46 @@
 		}
 	}
 	</script>
+	
+	<script>
+	const search_the_word_two = () => {
+		let filter = document.getElementById('user_med_input').value.toUpperCase();
+		let data_of_table = document.getElementById('data_of_table');
+		let tr = data_of_table.getElementsByTagName('tr');
+		for(var i = 0; i < tr.length; i++) {
+			let td = tr[i].getElementsByTagName('td')[1];
+			if(td) {
+				let textvalue = td.textContent || td.innerHTML;
+				if(textvalue.toUpperCase().indexOf(filter) > -1) {
+					tr[i].style.display = "";
+				} else {
+					tr[i].style.display = "NONE";
+				}
+			}
+		}
+	}
+	</script>
+	
+	<script>
+	const search_the_word_three = () => {
+		let filter = document.getElementById('user_symp_input').value.toUpperCase();
+		let data_of_table = document.getElementById('data_of_table');
+		let tr = data_of_table.getElementsByTagName('tr');
+		for(var i = 0; i < tr.length; i++) {
+			let td = tr[i].getElementsByTagName('td')[2];
+			if(td) {
+				let textvalue = td.textContent || td.innerHTML;
+				if(textvalue.toUpperCase().indexOf(filter) > -1) {
+					tr[i].style.display = "";
+				} else {
+					tr[i].style.display = "NONE";
+				}
+			}
+		}
+	}
+	</script>
+	
+	
 </body>
 
 </html>
