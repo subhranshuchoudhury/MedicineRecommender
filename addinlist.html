@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Submit Form!</title>
+
+  <style type="text/css">
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background-color: #131F4F;
+  }
+  th, td {
+  border: 1px #131F4F;
+  border-radius: 10px;
+}
+
+  table, th, td {
+    border-collapse: collapse;
+  }
+  </style>
+
+</head>
+<body>
+  <form method="post" autocomplete="off" name="google-sheet">
+  	<center><br><br>
+         <h1 style="color: white;">Submit New Data!</h1><br>
+         <h4 style="color: darkgreen;text-align: center;">*Submit new medicines here*</h4>
+         <table style="border-radius: 20px;background-color: darkgreen;width: 90%;text-align: center">	
+            
+             <tr><td style="color: yellow;"><b>Disease Name : </b></td>
+             <td><input style="width: 80%;border-radius: 20px;text-align: center;color: red;" type="text" name="Disease"   required="" /></td>
+            </tr>
+            <tr><td style="color: yellow;"><b>Medicine Name : </b></td>
+            <td><input style="width: 80%;border-radius: 20px;text-align: center;color: red;" type="text" name="Medicine"   required="" /></td>
+            </tr>
+            <tr><td style="color: yellow;"><b>Symptoms : </b></td>
+            <td><input style="width: 80%;border-radius: 20px;text-align: center;color: red;" type="text" name="Symptoms"   required="" /></td>
+            </tr>
+            
+           
+         </table>
+         <br>
+         <h5 style="color: white;">*Thanks for the help*</h5>
+         <br>
+         <input style="background-color: yellow;border-radius: 20px;width: 10%;font-size: 15px;" type="submit" name="submit" value="Submit"/>
+    </center>
+  </form>
+
+  <p align="center" style="color: red;">
+    <a href="https://subhranshuchoudhury.github.io/MedicineRecommender/">HOME</a>
+    <marquee>**Data only visible on main page after verification** </marquee>
+    <p style="color: white;text-align: center;">Submitted Data<br>
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyeLiPB9LlCubbE_59L3Y1d4KUXUD0-4Bp1jUlKSDhKniJNr9RYnZ1-n-4CpnQyQ-cAme46FeC3qEJ/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    </p>
+  </p>
+
+  <script type="text/javascript">
+
+
+	  const scriptURL = 'https://script.google.com/macros/s/AKfycbyLV7Txg-9WtBSGyfMyZZ1rPYuBW4fP7Og8T1liBFIZl8wObK0RXN2npjcgX0m_4A/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks, Successfully Submitted."))
+                .catch(error => console.error('Error!', error.message))
+            })
+  </script>
+</body>
+</html>
