@@ -5,4 +5,4 @@ ___________________________
 - DEMO OF WEBPAGE: [ VIEW ](https://subhranshuchoudhury.github.io/MedicineRecommend/)
 - T&C: [ VIEW ](https://raw.githubusercontent.com/subhranshuchoudhury/MedicineRecommend/main/Terms%20And%20Conditions.txt)
 ___________________________
-![demo of webpage](https://user-images.githubusercontent.com/63858190/152561855-0d43a832-9d96-40ca-9f5b-480237f925ed.png)
+![demo of webpage](/Demo_img/readme_demo.jpg)
