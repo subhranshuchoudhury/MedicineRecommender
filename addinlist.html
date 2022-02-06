@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Medicines</title>
+	<link rel="stylesheet" href="style.css">
+
+	<style type="text/css">
+	html,
+	body {
+		height: 100%;
+	}
+
+	body {
+		background-color: #131F4F;
+	}
+	</style>
+
+	<script type="text/javascript">
+
+	window.onbeforeunload = function(e) {
+  var dialogText = "Warning: Save the table data before refresh!";
+  e.returnValue = dialogText;
+  return dialogText;
+};
+
+	</script>
+
+</head>
+<body>
+
+	<center>
+		<table border="4">
+			<thead>
+				<tr>
+					<th>DISEASE</th>
+					<td><input type="text" name="disease" id="disease"></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>MEDICINE</th>
+					<td><input type="text" name="medicine" id="medicine"></td>
+				</tr>
+				<tr>
+					<th>SYMPTOMS</th>
+					<td><input type="text" name="symptoms" id="symptoms"></td>
+				</tr>
+
+				<tr id="btna">
+					<td colspan="2"><input type="button" style="background-color: #cfbf32" name="button" id="btn" value="Save" onclick="AddRow()"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p align="center" style="color: red">*inspect the page and copy the table data*
+			<br>*do not refresh the page before save the data*
+		</p>
+
+		<table border="4" id="show">
+			<thead>
+				<tr>
+					<th>Disease</th>
+					<th>Medicine</th>
+					<th>Symptoms</th>
+				</tr>
+			</thead>
+		</table>
+	</center>
+
+	<script>
+
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("disease").value;
+			list2[x] = document.getElementById("medicine").value;
+			list3[x] = document.getElementById("symptoms").value;
+
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+
+
+			n++;
+			x++;
+		}
+
+	</script>
+</body>
+</html>
